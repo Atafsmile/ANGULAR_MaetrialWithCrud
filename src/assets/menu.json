@@ -1,0 +1,14 @@
+[
+    {
+        "componentName":"Dashboard",
+        "redirect":"/dashboard"    
+    },
+    {
+        "componentName":"Form",
+        "redirect":"/dashboard/user-form"   
+    },
+    {
+        "componentName":"reports",
+        "redirect":"/dashboard/reports"
+    }
+]

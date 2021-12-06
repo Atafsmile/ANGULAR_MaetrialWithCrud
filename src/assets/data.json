@@ -1,0 +1,34 @@
+{
+  "Users": [
+    {
+      "fullName": "ANSARI",
+      "email": "ss@g",
+      "mobile": "ffffddddd",
+      "city": "ddddddd",
+      "gender": "female",
+      "department": "Computer",
+      "hireDate": "2021-12-01T18:30:00.000Z",
+      "isPermanent": true
+    },
+    {
+      "fullName": "ANSARI",
+      "email": "ss@g",
+      "mobile": "55555555",
+      "city": "NJ",
+      "gender": "male",
+      "department": "3",
+      "hireDate": "2021-12-01T18:30:00.000Z",
+      "isPermanent": true
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

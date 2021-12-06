@@ -1,0 +1,74 @@
+<p *ngIf="!editMode; else edit">This will be a new User!</p>
+
+<ng-template #edit>
+  <p>Now you can edit!</p>
+  </ng-template>
+<div class="container">
+   <mat-toolbar>
+      <span>Create User </span>
+ </mat-toolbar>
+ <form [formGroup]="forms" (ngSubmit)="onSubmit()">
+ <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+        <div class="controles-container">
+          <input type="hidden">
+          <mat-form-field>
+            <input  matInput placeholder="Full Name*" formControlName='fullName'>
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input  matInput placeholder="Email" formControlName='email'>
+            <mat-error>Invalid email address.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input  matInput placeholder="Mobile*" formControlName='mobile'>
+            <mat-error >This field is mandatory.</mat-error>
+            <mat-error >Minimum 8 charactors needed.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input  matInput placeholder="City" formControlName='city'>
+          </mat-form-field>
+        </div>
+</mat-grid-tile>
+<mat-grid-tile>
+    <div class="controles-container">
+        <div class="add-bottom-padding">
+            <mat-radio-group  formControlName='gender'>
+                <mat-radio-button value="Male">Male</mat-radio-button>
+                <mat-radio-button value="Female">Female</mat-radio-button>
+                <mat-radio-button value="Other">Other</mat-radio-button>
+              </mat-radio-group>
+           
+</div>
+<mat-form-field>
+    <mat-select  placeholder="Department" formControlName='department'>
+      <mat-option>None</mat-option>
+      <ng-container >
+        <mat-option value="cs">Computer</mat-option>
+        <mat-option value="It">Computer/IT</mat-option>
+        <mat-option value="angular">Computer/Angular</mat-option>
+        <mat-option value="Cyber">Computer/Cyber</mat-option>
+        <mat-option value="Other">Other</mat-option>
+
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" >
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName='regdate'>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  
+  <div class="add-bottom-padding">
+    <mat-checkbox formControlName="isPermanent">Permanent Employee</mat-checkbox>
+  </div>
+  <div class="button-row">
+    <button mat-raised-button color="primary" type="submit" [disabled]='forms.invalid' >Submit</button>
+    <button mat-raised-button color="warn"  type="button" (click)="onClear()">Clear</button>
+  </div>
+</div>
+</mat-grid-tile>
+</mat-grid-list>
+</form>
+</div>
